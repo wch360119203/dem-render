@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    target: 'ES2015',
+    target: 'es2015',
     lib: {
       entry: './src/DemRender/index.ts',
       name: 'demRender',

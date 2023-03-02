@@ -1,6 +1,6 @@
 {
-  "name": "dem-render",
-  "private": true,
+  "name": "@wuch96/dem-render",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -38,5 +38,10 @@
   "files": [
     "dist"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/wch360119203/dem-render",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wch360119203/dem-render.git"
+  }
 }
