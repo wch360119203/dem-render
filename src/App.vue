@@ -1,21 +1,21 @@
 <template>
-  <span ref="container"></span>
+  <span ref="container" />
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
-import { getDemData } from './ts';
-import { DemRender } from './DemRender';
-const container = ref<HTMLElement>();
+import { onMounted, ref } from 'vue'
+import { getDemData } from './ts'
+import { DemRender } from './DemRender'
+const container = ref<HTMLElement>()
 onMounted(async () => {
-  const data = await getDemData();
+  const data = await getDemData()
   const painter = new DemRender({
-    ncols: data.ncols,
-    nrows: data.nrows,
-    maxValue: data.maxValue,
-    minValue: data.minValue,
-    NODATA_value: data.NODATA_value,
-  });
-  painter.render(data.data);
-  container.value?.appendChild(painter.getCanvas());
-});
+    ncols: data.description.ncols,
+    nrows: data.description.nrows,
+    maxValue: data.description.maxValue,
+
+    minValue: data.description.minValue,
+  })
+  painter.render(data.dem)
+  container.value?.appendChild(painter.getCanvas())
+})
 </script>
