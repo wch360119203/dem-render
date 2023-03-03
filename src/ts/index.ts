@@ -10,7 +10,7 @@ export async function getDemData() {
         const value = dem[i + 1]
         cache.push(cols, rows, value)
       }
-      return { description, dem: new Float32Array(cache) }
+      return { description, dem: cache }
     },
   )
   return json

@@ -21,13 +21,15 @@ export class DemRender {
     ctx.clear(ctx.COLOR_BUFFER_BIT)
   }
 
-  /** 绘制dem */
-  public render(data: Float32Array) {
+  /** 绘制dem
+   * @param data 格式为cols,rows,value
+   */
+  public render(data: number[]) {
     const ctx = this.getCtx()
     // 创建buffer
     const buffer = ctx.createBuffer()
     ctx.bindBuffer(ctx.ARRAY_BUFFER, buffer)
-    ctx.bufferData(ctx.ARRAY_BUFFER, data, ctx.STATIC_DRAW)
+    ctx.bufferData(ctx.ARRAY_BUFFER, new Float32Array(data), ctx.STATIC_DRAW)
     // 启用position属性
     const demValue = ctx.getAttribLocation(this.program, 'demValue')
     ctx.enableVertexAttribArray(demValue)
